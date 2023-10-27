@@ -1,14 +1,23 @@
-#Implement  a recursive function to calculate the factorial of a given number
+"""
+Write a function called linear_search_product that takes the List of products and a target product
+name as input. The function should perform a linear search to find the target product in the list and
+return a list of indices of all occurrences of the product if found, or an empty list if the product is not 
+found
+"""
 
-def recur_factorial(n):  
-   if n == 1:  
-       return n  
-   else:  
-       return n*recur_factorial(n-1)  
-num = int(input("Enter a number: "))    
-if num < 0:  
-   print("Sorry, factorial does not exist for negative numbers")  
-elif num == 0:  
-   print("The factorial of 0 is 1")  
-else:  
-   print("The factorial of",num,"is",recur_factorial(num))
+
+def LinearSearchProduct(productList, targetProduct):
+  indices = []
+  
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+        indices.append(index)
+
+  return indices
+
+
+#Exmpla usage:
+products = ["shoes", "boot", "Loafer", "shoes", "sandal", "shoes"]
+target = "shoes"
+result =  LinearSearchProduct(products, target)
+print(result)
